@@ -29,20 +29,18 @@
     </script>
 </head>
 <body>
-    <form action="login.js" method="post">
-        <p>Nome: <input type="text" name="usuario" size="50" placeholder="Digite aqui seu nome" /></p>
-        <p>
-            Senha: 
-            <input 
-                type="password" 
-                name="senha" 
-                maxlength="8" 
-                minlength="2" 
-                placeholder="Clique para sugerir uma senha" 
-                onclick="sugerirSenha(this)" 
-            />
-        </p>
-        <input type="submit" value="Enviar">
-    </form>
-</body>
+    <div class="container">
+        <h1>Formulário de Login</h1>
+        <form action="login.js" method="post">
+            <div class="form-group">
+                <label for="usuario">Nome:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Digite aqui seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" maxlength="8" minlength="2" placeholder="Clique para sugerir uma senha" onclick="sugerirSenha(this)" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </html>
