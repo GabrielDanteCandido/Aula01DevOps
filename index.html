@@ -7,26 +7,16 @@
     <title>Formulário de Login</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // Função para gerar uma senha alfanumérica aleatória
-        function gerarSenhaAleatoria() {
-            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\/*&%$#@!-()";
-            let senha = "";
-            const tamanhoSenha = 8; // Tamanho da senha gerada
-
-            for (let i = 0; i < tamanhoSenha; i++) {
-                const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
-                senha += caracteres.charAt(indiceAleatorio);
-            }
-
-            return senha;
-        }
-
-        // Função para sugerir a senha como placeholder
+        // Função para sugerir o texto no placeholder
         function sugerirSenha(campoSenha) {
-            const senhaGerada = gerarSenhaAleatoria();
-            campoSenha.setAttribute("placeholder", senhaGerada); // Define o placeholder
+            campoSenha.setAttribute("placeholder", "Insira sua senha"); // Define o placeholder como "Insira sua senha"
+            
+            // Opcional: Caso você queira fazer algo com a URL, como redirecionar ou adicionar parâmetros
+            const urlComSenha = window.location.href.split('?')[0] + '?senha=';
+            console.log('URL gerada com senha (sem senha aleatória):', urlComSenha); // Exibe a URL sem a senha gerada
         }
-    </script>
+        </script>
+        
 </head>
 <body>
     <div class="container">
