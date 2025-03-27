@@ -1,7 +1,7 @@
 const users = [
   { usuario: "Gabriel", senha: "gabriel123" },
   { usuario: "Ricardo", senha: "ricardo123" },
-  { usuario: "Eduardo", senha: "eduardo123" }
+  { usuario: "Eduardo", senha: "123" }
 ];
 
 function validarLogin(event) {
@@ -11,15 +11,23 @@ function validarLogin(event) {
   const senha = document.getElementById('senha').value;
 
   if (usuario && senha) {
+    const usuarioValido = users.some(user => user.usuario === usuario && user.senha === senha);
+
+    if (usuarioValido) {
       console.log('Dados do formulário:', {
-          usuario: usuario,
-          senha: senha
+        usuario: usuario,
+        senha: senha
       });
 
       alert('Login realizado com sucesso!');
+      window.location.href = "operacoes.html"; // Redireciona para a página operacoes.html
       return true;
-  } else {
-      alert('Por favor, preencha todos os campos!');
+    } else {
+      alert('Usuário ou senha inválidos!');
       return false;
+    }
+  } else {
+    alert('Por favor, preencha todos os campos!');
+    return false;
   }
 }
