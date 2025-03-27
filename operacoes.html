@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <div class="form-group">
+            <input type="" id="valor1" placeholder="Digite o primeiro valor">
+        </div>
+        <div class="form-group">
+            <input type="" id="valor2" placeholder="Digite o segundo valor">
+        </div>
+        <div class="form-group">
+            <button onclick="calcular('+')">+</button>     
+            <button onclick="calcular('-')">-</button>
+        </div>
+        <div class="form-group">
+            <button onclick="calcular('*')">*</button>
+            <button onclick="calcular('/')">/</button>
+        </div>
+        <div class="resultado" id="resultado">Resultado: 0</div>
+    </div>
+
+    <script>
+        function calcular(operador) {
+            // Obter os valores dos inputs
+            const valor1 = parseFloat(document.getElementById('valor1').value);
+            const valor2 = parseFloat(document.getElementById('valor2').value);
+
+            // Verificar se os valores são números válidos
+            if (isNaN(valor1) || isNaN(valor2)) {
+                alert("Por favor, insira valores numéricos válidos.");
+                return;
+            }
+
+            let resultado;
+
+            // Realizar a operação com base no operador selecionado
+            switch (operador) {
+                case '+':
+                    resultado = valor1 + valor2;
+                    break;
+                case '-':
+                    resultado = valor1 - valor2;
+                    break;
+                case '*':
+                    resultado = valor1 * valor2;
+                    break;
+                case '/':
+                    if (valor2 === 0) {
+                        alert("Não é possível dividir por zero.");
+                        return;
+                    }
+                    resultado = valor1 / valor2;
+                    break;
+                default:
+                    alert("Operador inválido.");
+                    return;
+            }
+
+            // Exibir o resultado
+            document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

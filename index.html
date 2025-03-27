@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Login</title>
+    <link rel="stylesheet" href="style.css">
+   <script>
+// Função para sugerir o texto no placeholder
+function sugerirSenha(campoSenha) {
+    campoSenha.setAttribute("placeholder", "Insira sua senha"); // Define o placeholder como "Insira sua senha"
+    
+    // Opcional: Caso você queira fazer algo com a URL, como redirecionar ou adicionar parâmetros
+    const urlComSenha = window.location.href.split('?')[0] + '?senha=';
+    console.log('URL gerada com senha (sem senha aleatória):', urlComSenha); // Exibe a URL sem a senha gerada
+}
+</script>
+        
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Login</h1>
+        <form action="login.js" method="post">
+            <div class="form-group">
+                <label for="usuario">Nome:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Digite aqui seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" maxlength="8" minlength="2" placeholder="Insira sua senha" onclick="sugerirSenha(this)" required>
+            </div>
+            <form action="operacoes.html" method="post">
+                <button type="submit">Enviar</button>
+              </form>
+              
+        </form>
+    </div>
+</html>
