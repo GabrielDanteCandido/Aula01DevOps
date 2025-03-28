@@ -27,12 +27,19 @@ Exibe mensagens dinâmicas para feedback do usuário.
 Link visível (sem funcionalidade implementada).
 
 login-interface/
+
 ├── css/               # Arquivos de estilo
+
 │   └── styles.css     # Estilos da interface
+
 ├── js/                # Arquivos de lógica JavaScript
+
 │   └── script.js      # Validação do login
+
 ├── index.html         # Página principal da interface
+
 ├── operacoes.html     # Página com uma calculadora
+
 └── README.md          # Documentação do projeto
 
 
